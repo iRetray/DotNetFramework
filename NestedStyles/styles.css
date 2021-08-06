@@ -1,0 +1,27 @@
+div {
+  padding: 20px;
+  text-align: center;
+  border: 1px solid grey;
+}
+
+h1 a em {
+  color: red;
+  font-size: 12px;
+  font-family: Verdana;
+}
+
+p,
+span,
+h2 {
+  color: green;
+  font-size: 14px;
+  font-family: Arial;
+}
+
+p.aviso a#estiloEnlace span.estilo {
+  padding: 15px;
+  color: green;
+  font-size: 14px;
+  font-family: Arial;
+  text-decoration: underline red;
+}

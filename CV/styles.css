@@ -1,0 +1,111 @@
+body {
+  font: 100% Verdana, Arial, Helvetica, sans-serif;
+  background: #666666;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  color: #000000;
+}
+
+.twoColElsRt #container {
+  width: 46em;
+  background: #ffffff;
+  margin: 0 auto;
+  border: 1px solid #000000;
+  text-align: left;
+}
+
+.twoColElsRt #sidebar1 {
+  float: right;
+  width: 12em;
+  background: #ebebeb;
+  padding: 15px 0;
+  border-left: 1px solid #262626;
+  border-bottom: 1px solid #262626;
+  border-bottom-left-radius: 10px;
+}
+.twoColElsRt #sidebar1 h3,
+.twoColElsRt #sidebar1 p {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.twoColElsRt #mainContent {
+  margin: 0 13em 0 1.5em;
+}
+
+.fltrt {
+  float: right;
+  margin-left: 8px;
+}
+.fltlft {
+  float: left;
+  margin-right: 8px;
+}
+.clearfloat {
+  clear: both;
+  height: 0;
+  font-size: 1px;
+  line-height: 0px;
+}
+
+.profileImage {
+  max-width: 150px;
+  border-radius: 50%;
+  margin: 20px;
+}
+
+.name {
+  font-size: 25px;
+  text-align: center;
+  font-weight: bold;
+  margin: 0px;
+  margin-bottom: 10px;
+}
+
+.userData p {
+  font-size: 14px;
+  padding: 0px 10px;
+  margin: 2px;
+  color: #2d2d2d;
+  text-align: center;
+}
+
+.description {
+  background-color: whitesmoke;
+  border-radius: 10px;
+  border: 1px solid grey;
+  padding: 10px;
+  font-size: 15px;
+}
+
+.eanLogo {
+  max-width: 300px;
+  text-align: center;
+}
+
+.subject {
+  text-align: center;
+  font-size: 25px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-weight: lighter;
+}
+
+.noMarginP {
+  margin: 0px;
+}
+
+.contentsContainer {
+  display: flex;
+  margin: 30px;
+}
+
+.dotNet {
+  max-width: 200px;
+}
+
+.text {
+  margin-left: 20px;
+  font-size: 14px;
+}
