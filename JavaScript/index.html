@@ -1,28 +1,48 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script
-      src="./calculator.js"
-      language="javascript"
-      type="text/javascript"
-    ></script>
-    <link
-      rel="stylesheet"
-      href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.4.0/css/fabric.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.4.0/css/fabric.components.min.css"
-    />
-    <script src="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.4.0/js/fabric.min.js"></script>
+    <link rel="stylesheet" href="./fabric-ui/fabric.min.css" />
+    <link rel="stylesheet" href="./fabric-ui/fabric.components.min.css" />
+    <script src="./fabric-ui/fabric.min.js"></script>
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body class="ms-Fabric">
     <div class="GeneralContainer">
       <p class="ms-Label giantText">Conceptos de JavaScript</p>
+
+      <div class="formContainer">
+        <div class="ms-TextField">
+          <label class="ms-Label">Primer número</label>
+          <input
+            id="inputNumber1"
+            class="ms-TextField-field"
+            type="number"
+            value=""
+            placeholder="Escribe tu nombre"
+          />
+        </div>
+        <div class="ms-TextField">
+          <label class="ms-Label">Segundo número</label>
+          <input
+            id="inputNumber2"
+            class="ms-TextField-field"
+            type="number"
+            value=""
+            placeholder="Escribe tu nombre"
+          />
+        </div>
+      </div>
+
       <button class="ms-Button ms-Button--primary">
-        <span class="ms-Button-label">Create Account</span>
+        <span id="buttonFinal" class="ms-Button-label"
+          >Escribe para comenzar</span
+        >
       </button>
     </div>
   </body>
+  <script
+    src="./calculator.js"
+    language="javascript"
+    type="text/javascript"
+  ></script>
 </html>
