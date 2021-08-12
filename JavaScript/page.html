@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QUIZ</title>
+  </head>
+  <body>
+    <ul id="body"></ul>
+  </body>
+  <script>
+    const repetitions = parseInt(prompt("Cuantos elementos queres?"));
+    for (let index = 0; index < repetitions; index++) {
+      const newDiv = document.createElement("li");
+      const newContent = document.createTextNode("Hola!¿Qué tal?");
+      newDiv.appendChild(newContent);
+
+      const bodyDiv = document.getElementById("body");
+      bodyDiv.appendChild(newDiv);
+    }
+  </script>
+</html>

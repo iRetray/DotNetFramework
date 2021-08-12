@@ -14,3 +14,7 @@
 .giantText {
   font-size: 35px;
 }
+
+p a span em {
+  text-decoration: underline;
+}
