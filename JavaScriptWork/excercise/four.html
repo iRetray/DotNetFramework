@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../fabric-ui/fabric.min.css" />
+    <link rel="stylesheet" href="../fabric-ui/fabric.components.min.css" />
+    <link rel="stylesheet" href="../styles.css" />
+    <script src="../fabric-ui/fabric.min.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="centerDiv">
+      <div class="CenterContainer" style="max-width: 300px">
+        <p class="ms-TextField title">Cuarto ejercicio</p>
+        <div class="ms-TextField">
+          <label class="ms-Label">Cateto 1</label>
+          <input class="ms-TextField-field" type="number" id="sideOne" />
+        </div>
+        <div class="ms-TextField">
+          <label class="ms-Label">Cateto 2</label>
+          <input class="ms-TextField-field" type="number" id="sideTwo" />
+        </div>
+        <div class="ms-TextField">
+          <label class="ms-Label">Hipotenusa</label>
+          <input class="ms-TextField-field" type="number" id="hipo" />
+        </div>
+        <button class="ms-Button ms-Button--primary">
+          <span class="ms-Button-label" onClick="verifyTriangle()"
+            >¿Son lados validos?</span
+          >
+        </button>
+        <p style="margin-top: 20px" class="ms-TextField title" id="outcome"></p>
+      </div>
+    </div>
+  </body>
+  <script>
+    const verifyTriangle = () => {
+      const firstSide = parseInt(document.getElementById("sideOne").value);
+      const secondSide = parseInt(document.getElementById("sideTwo").value);
+      const hipo = parseInt(document.getElementById("hipo").value);
+      document.getElementById(
+        "outcome"
+      ).textContent = `Los lados del triangulo son ${
+        Math.pow(firstSide, 2) + Math.pow(secondSide, 2) === Math.pow(hipo, 2)
+          ? "correctos"
+          : "incorrectos"
+      }`;
+    };
+  </script>
+</html>

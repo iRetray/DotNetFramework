@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../fabric-ui/fabric.min.css" />
+    <link rel="stylesheet" href="../fabric-ui/fabric.components.min.css" />
+    <link rel="stylesheet" href="../styles.css" />
+    <script src="../fabric-ui/fabric.min.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="CenterContainer">
+      <p class="ms-TextField title">Tercer ejercicio</p>
+      <p class="ms-TextField" id="titlesContainer"></p>
+    </div>
+  </body>
+  <script>
+    function generateRandomColor() {
+      var letters = "0123456789ABCDEF";
+      var color = "#";
+      for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    }
+
+    const text = prompt("¿Que texto quieres en los titulos?");
+    for (let index = 0; index < 6; index++) {
+      const newTitle = document.createElement("h" + (index + 1));
+      const newContent = document.createTextNode(text);
+      newTitle.appendChild(newContent);
+      newTitle.style = "color:" + generateRandomColor();
+
+      const titlesContainer = document.getElementById("titlesContainer");
+      titlesContainer.appendChild(newTitle);
+    }
+  </script>
+</html>
