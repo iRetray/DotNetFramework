@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../fabric-ui/fabric.min.css" />
+    <link rel="stylesheet" href="../fabric-ui/fabric.components.min.css" />
+    <link rel="stylesheet" href="../styles.css" />
+    <script src="../fabric-ui/fabric.min.js"></script>
+    <script src="../jquery-3.6.0.js"></script>
+    <script src="./firstScript.js"></script>
+    <style>
+      .selector {
+        width: 150px;
+        font-family: Segoe UI WestEuropean, Segoe UI, -apple-system,
+          BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+        padding: 5px;
+      }
+      .alert {
+        color: blue;
+        font-weight: bold;
+        margin-left: 20px;
+        border: 1px solid blue;
+        padding: 8px;
+        border-radius: 5px;
+      }
+      .basic {
+        font-size: 30px;
+        font-weight: bold;
+      }
+      .section {
+        display: flex;
+        align-items: center;
+        place-content: space-between;
+      }
+      .section span {
+        margin-right: 25px;
+      }
+      .finalSection {
+        max-width: 500px;
+      }
+      .title {
+        font-size: 35px;
+      }
+      .red {
+        color: red;
+      }
+      .green {
+        color: green;
+      }
+      .final {
+        font-size: 25px;
+        font-weight: bold;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="CenterContainer">
+      <p class="ms-TextField title">Calculo de salario</p>
+      <div>
+        <label for="schedule" class="ms-TextField">Horario de trabajo:</label>
+        <select id="schedule" name="schedule" form="carform" class="selector">
+          <option value="morning">8 am - 10 pm</option>
+          <option value="night">10 pm - 6 am</option>
+          <option value="extra">6 am - 8 am</option>
+        </select>
+        <span id="scheduleAlert" class="ms-TextField alert">
+          Recargo de horas extras del 10%
+        </span>
+      </div>
+      <div style="margin-top: 15px">
+        <label for="risk" class="ms-TextField">
+          Tipo de riesgos profesionales:
+        </label>
+        <select id="risk" name="carlist" form="carform" class="selector">
+          <option value="I">Tipo I</option>
+          <option value="II">Tipo II</option>
+          <option value="III">Tipo III</option>
+          <option value="IV">Tipo IV</option>
+          <option value="V">Tipo V</option>
+        </select>
+        <span id="riskAlert" class="ms-TextField alert">
+          Deducción por riesgo I del 1.25%
+        </span>
+      </div>
+      <div style="margin-top: 30px" class="finalSection">
+        <div class="section">
+          <span class="ms-TextField">Salario mínimo</span>
+          <p class="ms-TextField basic">$ 908,526</p>
+        </div>
+        <div class="section">
+          <span class="ms-TextField">Recargo por extras</span>
+          <p class="ms-TextField basic green" id="rechargeExtras">
+            + $ 90,852.6
+          </p>
+        </div>
+        <div class="section">
+          <span class="ms-TextField">
+            Deducción por salud <strong>(15%)</strong>
+          </span>
+          <p class="ms-TextField basic red" id="reductionHealth">- $ 0</p>
+        </div>
+        <div class="section">
+          <span class="ms-TextField">
+            Deducción por pensiones y cesantías <strong>(14.5%)</strong>
+          </span>
+          <p class="ms-TextField basic red" id="reductionPension">- $ 0</p>
+        </div>
+        <div class="section">
+          <span class="ms-TextField">
+            Deducción por riesgos profesionales
+          </span>
+          <p class="ms-TextField basic green" id="reductionProfessional">
+            + $ 11,356.575
+          </p>
+        </div>
+        <div class="section">
+          <span class="ms-TextField final"> Salario final </span>
+          <p class="ms-TextField basic" id="final">$ 720,006</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

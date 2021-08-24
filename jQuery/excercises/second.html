@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../fabric-ui/fabric.min.css" />
+    <link rel="stylesheet" href="../fabric-ui/fabric.components.min.css" />
+    <link rel="stylesheet" href="../styles.css" />
+    <script src="../fabric-ui/fabric.min.js"></script>
+    <script src="../jquery-3.6.0.js"></script>
+    <script src="./secondScript.js"></script>
+    <style>
+      .title {
+        font-size: 35px;
+      }
+      .valueProduct {
+        max-width: 300px;
+      }
+      .basic {
+        font-size: 30px;
+        font-weight: bold;
+      }
+      .section {
+        display: flex;
+        align-items: center;
+        place-content: space-between;
+      }
+      .section span {
+        margin-right: 25px;
+      }
+      .finalSection {
+        max-width: 500px;
+      }
+      .title {
+        font-size: 35px;
+      }
+      .red {
+        color: red;
+      }
+      .green {
+        color: green;
+      }
+      .final {
+        font-size: 25px;
+        font-weight: bold;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="CenterContainer">
+      <p class="ms-TextField title">Calculo del IVA</p>
+      <div class="ms-TextField">
+        <label class="ms-Label">Valor del producto</label>
+        <input
+          class="ms-TextField-field valueProduct"
+          type="number"
+          placeholder="Escribe el valor del producto"
+          id="valueProduct"
+        />
+        <div style="margin-top: 30px" class="finalSection">
+          <div class="section">
+            <span class="ms-TextField">IVA del 16%</span>
+            <p class="ms-TextField basic red" id="mainIVA">+ $ 0</p>
+          </div>
+          <div class="section">
+            <span class="ms-TextField"><strong>Subtotal</strong></span>
+            <p class="ms-TextField basic" id="subtotal">$ 0</p>
+          </div>
+          <div class="section" id="bonus">
+            <span class="ms-TextField green" id="discountLabel">
+              Obtenido un descuento del 6%
+            </span>
+            <p class="ms-TextField basic green" id="discount">$ 0</p>
+          </div>
+          <div class="section">
+            <span class="ms-TextField"><strong>Total</strong></span>
+            <p class="ms-TextField basic" id="total">$ 0</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
