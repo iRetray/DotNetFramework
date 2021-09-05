@@ -1,0 +1,7 @@
+C:\Users\Retray\Desktop\InheritanceInstances\bin\Debug\InheritanceInstances.exe.config
+C:\Users\Retray\Desktop\InheritanceInstances\bin\Debug\InheritanceInstances.exe
+C:\Users\Retray\Desktop\InheritanceInstances\bin\Debug\InheritanceInstances.pdb
+C:\Users\Retray\Desktop\InheritanceInstances\obj\Debug\InheritanceInstances.csproj.AssemblyReference.cache
+C:\Users\Retray\Desktop\InheritanceInstances\obj\Debug\InheritanceInstances.csproj.CoreCompileInputs.cache
+C:\Users\Retray\Desktop\InheritanceInstances\obj\Debug\InheritanceInstances.exe
+C:\Users\Retray\Desktop\InheritanceInstances\obj\Debug\InheritanceInstances.pdb
