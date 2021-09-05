@@ -9,7 +9,7 @@ namespace InheritanceInstances.Childrens {
 
         private double radio;
 
-        public Circulo(string nombre, string color, string tipo, double area, double perimetro, double lado, double radio) : base(nombre, color, tipo, area, perimetro) {
+        public Circulo(string nombre, string color, string tipo, double area, double perimetro, double radio) : base(nombre, color, tipo, area, perimetro) {
             Nombre = nombre;
             Color = color;
             Tipo = tipo;
@@ -30,6 +30,10 @@ namespace InheritanceInstances.Childrens {
 
         public double obtenerCircunferencia() {
             return 2 * Math.PI * Radio;
+        }
+
+        public double obtenerDiametro() {
+            return 2 * Radio;
         }
     }
 }
