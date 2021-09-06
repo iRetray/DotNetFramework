@@ -20,7 +20,7 @@ namespace InterfacesBusiness.Implementators {
         }
 
         public void definirTamañoAgenda(int totalContactos) {
-            Console.WriteLine("Soy el array implementando esta funcion");
+            throw new NotImplementedException();
         }
 
         public void eliminarContactoAgenda() {
