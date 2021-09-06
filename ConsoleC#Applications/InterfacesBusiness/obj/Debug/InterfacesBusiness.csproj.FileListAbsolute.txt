@@ -1,0 +1,7 @@
+C:\Users\felipe\Desktop\.NET\ConsoleC#Applications\InterfacesBusiness\bin\Debug\InterfacesBusiness.exe.config
+C:\Users\felipe\Desktop\.NET\ConsoleC#Applications\InterfacesBusiness\bin\Debug\InterfacesBusiness.exe
+C:\Users\felipe\Desktop\.NET\ConsoleC#Applications\InterfacesBusiness\bin\Debug\InterfacesBusiness.pdb
+C:\Users\felipe\Desktop\.NET\ConsoleC#Applications\InterfacesBusiness\obj\Debug\InterfacesBusiness.csprojAssemblyReference.cache
+C:\Users\felipe\Desktop\.NET\ConsoleC#Applications\InterfacesBusiness\obj\Debug\InterfacesBusiness.csproj.CoreCompileInputs.cache
+C:\Users\felipe\Desktop\.NET\ConsoleC#Applications\InterfacesBusiness\obj\Debug\InterfacesBusiness.exe
+C:\Users\felipe\Desktop\.NET\ConsoleC#Applications\InterfacesBusiness\obj\Debug\InterfacesBusiness.pdb

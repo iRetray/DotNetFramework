@@ -1,0 +1,3 @@
+codigo;nombre;apellido;edad;direccion;telefono
+1;jaime;Gutierrez;40;calle 30 s #15; 31167423
+2;Julian;Perez;30;cra 20 #100; 767803

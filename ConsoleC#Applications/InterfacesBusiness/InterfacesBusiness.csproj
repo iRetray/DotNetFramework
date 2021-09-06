@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BusinessInterface.cs" />
+    <Compile Include="ContactoAgenda.cs" />
     <Compile Include="Implementators\ImplementerCollection.cs" />
     <Compile Include="Implementators\ImplementerList.cs" />
     <Compile Include="Program.cs" />
