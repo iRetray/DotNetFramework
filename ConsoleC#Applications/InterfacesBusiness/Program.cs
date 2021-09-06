@@ -4,11 +4,12 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using InterfacesBusiness.Implementators;
 
 namespace InterfacesBusiness {
     class Program {
 
-        private BusinessInterface interfaceInstanced;
+        private static ImplementerCollection instancedCollection;
 
         //Arreglo:
         //public static string[] listadoContactos;
@@ -22,6 +23,12 @@ namespace InterfacesBusiness {
 
 
         static void Main(string[] args) {
+
+            instancedCollection = new ImplementerCollection();
+            instancedCollection.definirTamañoAgenda(1);
+
+
+
 
             Console.WriteLine("BIENVENIDO A SU ADMINISTRADOR DE AGENDA");
             Menu();

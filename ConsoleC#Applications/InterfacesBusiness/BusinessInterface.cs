@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 namespace InterfacesBusiness {
     interface BusinessInterface {
         void definirTamañoAgenda(int totalContactos);
-        void cargarAgendaContactos();
-        void ingresarContactoLista();
-        void modificarContactoLista();
-        void consultarContactoAgenda();
-        void eliminarContactoAgenda();
+        void cargarAgendaContactos(int totalContactos, string rutaArchivo);
+        bool ingresarContactoLista(ContactoAgenda registroNuevo);
+        bool modificarContactoLista(ContactoAgenda registroModificar);
+        ContactoAgenda consultarContactoAgenda(int codigoContacto);
+        bool eliminarContactoAgenda(int codigoContacto);
         void imprimirListaContactos();
     }
 }

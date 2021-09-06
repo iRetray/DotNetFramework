@@ -3,9 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static InterfacesBusiness.ContactoAgenda;
 
 namespace InterfacesBusiness.Implementators {
     class ImplementerCollection :BusinessInterface {
+
+        private List<ContactoAgenda> listaContactos;
+        private int numeroPaginas;
+
         public void cargarAgendaContactos() {
             throw new NotImplementedException();
         }
@@ -15,7 +20,7 @@ namespace InterfacesBusiness.Implementators {
         }
 
         public void definirTamañoAgenda(int totalContactos) {
-            Console.WriteLine("Soy el Collection implementando esta funcion");
+            numeroPaginas = totalContactos;
         }
 
         public void eliminarContactoAgenda() {
