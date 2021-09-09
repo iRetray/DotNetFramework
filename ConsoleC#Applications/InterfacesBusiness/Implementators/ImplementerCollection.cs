@@ -11,32 +11,49 @@ namespace InterfacesBusiness.Implementators {
         private List<ContactoAgenda> listaContactos;
         private int numeroPaginas;
 
-        public void cargarAgendaContactos() {
+        public void cargarAgendaContactos(int totalContactos, string rutaArchivo) {
             throw new NotImplementedException();
         }
 
-        public void consultarContactoAgenda() {
-            throw new NotImplementedException();
+        public ContactoAgenda consultarContactoAgenda(int codigoContacto) {
+            foreach(var contacto in listaContactos) {
+                if(contacto.Codigo == codigoContacto) {
+                    return contacto;
+                }
+            }
+            return null;
         }
 
         public void definirTamañoAgenda(int totalContactos) {
             numeroPaginas = totalContactos;
         }
 
-        public void eliminarContactoAgenda() {
-            throw new NotImplementedException();
+        public bool eliminarContactoAgenda(int codigoContacto) {
+            var newList = new List<ContactoAgenda> { };
+            foreach(var contacto in listaContactos) {
+                if(contacto.Codigo != codigoContacto) {
+                    newList.Add(contacto);
+                }
+            }
+            listaContactos = newList;
+            return listaContactos.Count == newList.Count;
         }
 
         public void imprimirListaContactos() {
-            throw new NotImplementedException();
+            foreach(var contacto in listaContactos) {
+                Console.WriteLine(contacto.Codigo + ": " + contacto.Nombre + " " + contacto.Apellido + ", " + contacto.Edad + " años, " + contacto.Telefono + " " + contacto.Direccion);
+            }
         }
 
-        public void ingresarContactoLista() {
-            throw new NotImplementedException();
+        public bool ingresarContactoLista(ContactoAgenda registroNuevo) {
+            listaContactos.Add(registroNuevo);
+            return true;
         }
 
-        public void modificarContactoLista() {
-            throw new NotImplementedException();
+        public bool modificarContactoLista(ContactoAgenda registroModificar) {
+            eliminarContactoAgenda(registroModificar.Codigo);
+            listaContactos.Add(registroModificar);
+            return true;
         }
     }
 }
