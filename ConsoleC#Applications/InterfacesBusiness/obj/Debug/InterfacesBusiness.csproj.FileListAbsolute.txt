@@ -5,3 +5,10 @@ C:\Users\felipe\Desktop\.NET\ConsoleC#Applications\InterfacesBusiness\obj\Debug\
 C:\Users\felipe\Desktop\.NET\ConsoleC#Applications\InterfacesBusiness\obj\Debug\InterfacesBusiness.csproj.CoreCompileInputs.cache
 C:\Users\felipe\Desktop\.NET\ConsoleC#Applications\InterfacesBusiness\obj\Debug\InterfacesBusiness.exe
 C:\Users\felipe\Desktop\.NET\ConsoleC#Applications\InterfacesBusiness\obj\Debug\InterfacesBusiness.pdb
+C:\Users\Retray\Desktop\DotNetFramework\ConsoleC#Applications\InterfacesBusiness\obj\Debug\InterfacesBusiness.csproj.AssemblyReference.cache
+C:\Users\Retray\Desktop\DotNetFramework\ConsoleC#Applications\InterfacesBusiness\obj\Debug\InterfacesBusiness.csproj.CoreCompileInputs.cache
+C:\Users\Retray\Desktop\DotNetFramework\ConsoleC#Applications\InterfacesBusiness\obj\Debug\InterfacesBusiness.exe
+C:\Users\Retray\Desktop\DotNetFramework\ConsoleC#Applications\InterfacesBusiness\obj\Debug\InterfacesBusiness.pdb
+C:\Users\Retray\Desktop\DotNetFramework\ConsoleC#Applications\InterfacesBusiness\bin\Debug\InterfacesBusiness.exe.config
+C:\Users\Retray\Desktop\DotNetFramework\ConsoleC#Applications\InterfacesBusiness\bin\Debug\InterfacesBusiness.exe
+C:\Users\Retray\Desktop\DotNetFramework\ConsoleC#Applications\InterfacesBusiness\bin\Debug\InterfacesBusiness.pdb

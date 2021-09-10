@@ -21,6 +21,7 @@ namespace InheritanceInstances {
         public void InstanciarObjetos() {
             Console.Clear();
             Console.WriteLine("Herencia y Jerarquia en clases de C#");
+            Console.WriteLine("Julian Cruz - Felipe Villareal");
             Console.WriteLine("");
 
             Program aplicacionPrincipal = new Program();
@@ -78,10 +79,6 @@ namespace InheritanceInstances {
             Console.WriteLine("");
             Console.WriteLine("Presione ENTER para Finalizar...");
             Console.ReadLine();
-        }
-
-        public double leerValorReal(string mensaje) {
-            
         }
     }
 }

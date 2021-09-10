@@ -9,312 +9,227 @@ using InterfacesBusiness.Implementators;
 namespace InterfacesBusiness {
     class Program {
 
+        // Este programa contiene dos implementaciones de la Interface BusinessInterface
+        // Por defecto usa el ImplementerCollection
+        // Cambie la instancia utilizada para comprobar el funcionamiento del ImplementerList
+
         private static ImplementerCollection instancedCollection;
-
-        //Arreglo:
-        //public static string[] listadoContactos;
-        int numeroPaginas;
-
-    
-
-        //Colection :
-        public static List<ContactoAgenda> listadoContactos = new List<ContactoAgenda>();
-        public static List<ContactoAgenda> nuevo = new List<ContactoAgenda>();
-
+        private static ImplementerList instancedList;
 
         static void Main(string[] args) {
-
             instancedCollection = new ImplementerCollection();
-            instancedCollection.definirTamañoAgenda(1);
-
-
-
-
+            instancedList = new ImplementerList();
             Console.WriteLine("BIENVENIDO A SU ADMINISTRADOR DE AGENDA");
-            Menu();
-
-            //definirTamañoAgenda(int totalContactos): void
-
-
-            //cargarAgendaContactos(int totalContactos, String rutaArchivo)
-            //cargarAgendaContactos(10, @"contactos.txt");
-
-
-
-            //ingresarContactoLista(ContactoAgenda registroNuevo): bool
-
-            //public static List<ContactoAgenda> nuevo = (new ContactoAgenda(){Codigo = 10, Nombre = "dd", Apellido = "", Edad = 10, Direccion = "", Telefono = 10,} );
-
-            //ingresarContactoLista(ContactoAgenda nuevo);
-
-            
-            //modificarContactoLista(ContactoAgenda registroModificar): bool
-
-
-            //ConsutarContactoAgenda(int codigoContacto): ContactoAgenda
-
-
-            //eliminarContactoAgenda(int CodigoContacto): bool
-
-
-            //imprimirListaContacto(): void
-            //imprimirListaContactos();
+            Console.WriteLine("Julian Cruz - Felipe Villareal");
+            Console.WriteLine("");
+            Console.WriteLine("¿Que implementación desea usar?");
+            Console.WriteLine("1. Collection");
+            Console.WriteLine("2. Array");
+            int opcionImplementation = Int32.Parse(Console.ReadLine());
+            switch(opcionImplementation) {
+                case 1:
+                    MenuCollection();
+                    break;
+                case 2:
+                    MenuArray();
+                    break;
+            }
 
             Console.ReadKey();
         }
 
-        public static void Menu(){
-
+        public static void MenuCollection() {
             Console.WriteLine("");
-
-            Console.WriteLine("Que desea realizar: ");
-            Console.WriteLine("1. definir Tamaño de la Agenda");
-            Console.WriteLine("2. cargar Agenda de Contactos");
-            Console.WriteLine("3. ingresar Contacto a la Lista");
-            Console.WriteLine("4. modificar Contacto de la Lista");
-            Console.WriteLine("5. Consutar ContactoAgenda");
-            Console.WriteLine("6. eliminar ContactoAgenda");
-            Console.WriteLine("7. imprimir ListaContactos");
-            Console.WriteLine("8. SALIR");
+            Console.WriteLine("Seleccione una acción: ");
+            Console.WriteLine("1. Definir tamaño de la Agenda");
+            Console.WriteLine("2. Cargar Agenda de contactos");
+            Console.WriteLine("3. Ingresar contacto");
+            Console.WriteLine("4. Modificar contacto");
+            Console.WriteLine("5. Consultar contacto");
+            Console.WriteLine("6. Eliminar contacto");
+            Console.WriteLine("7. Imprimir lista de Contactos");
             Console.WriteLine("");
             Console.Write("Opcion: ");
             int opcion = Int32.Parse(Console.ReadLine());
 
-            
-            switch (opcion)
-            {
+            switch(opcion) {
                 case 1:
-                    {
-                        Console.WriteLine("Ingrese tamaño agenda: ");
-                        int tamaño = Int32.Parse(Console.ReadLine());
-                        definirTamañoAgenda(tamaño);
-                    }
+                    Console.WriteLine("");
+                    Console.WriteLine("¿Cuál será el tamaño de la agenda?: ");
+                    int tamaño = Int32.Parse(Console.ReadLine());
+                    instancedCollection.definirTamañoAgenda(tamaño);
+                    MenuCollection();
                     break;
-
-
                 case 2:
-                    //CARGAR AGENDA A LA COLECTION
-                    cargarAgendaContactos(10, @"contactos.txt");
+                    Console.WriteLine("");
+                    Console.WriteLine("Escriba la ruta del archivo TXT: ");
+                    Console.WriteLine("(Por defecto es 'contactos.txt')");
+                    string fileRoute = Console.ReadLine();
+                    instancedCollection.cargarAgendaContactos(fileRoute);
+                    MenuCollection();
                     break;
-
                 case 3:
-                    //INGRESAR NUEVO CONTACTO
-                    List<ContactoAgenda> datos = CargarDatosRegistro();
-                    ingresarContactoLista(datos[0]);
+                    Console.WriteLine("");
+                    Console.WriteLine("Escriba la información del nuevo contacto: ");
+                    Console.Write("Nombre: ");
+                    string nombre = Console.ReadLine();
+                    Console.Write("Apellido: ");
+                    string apellido = Console.ReadLine();
+                    Console.Write("Código: ");
+                    int codigo = Int32.Parse(Console.ReadLine());
+                    Console.Write("Edad: ");
+                    int edad = Int32.Parse(Console.ReadLine());
+                    Console.Write("Teléfono: ");
+                    int telefono = Int32.Parse(Console.ReadLine());
+                    Console.Write("Dirección: ");
+                    string direccion = Console.ReadLine();
+                    ContactoAgenda newContact = new ContactoAgenda(nombre, apellido, codigo, edad, telefono, direccion);
+                    instancedCollection.ingresarContactoLista(newContact);
+                    MenuCollection();
                     break;
-
                 case 4:
-                    //POR IMPLEMENTAR
-                    //modificarContactoLista(ContactoAgenda registroModificar);
+                    Console.WriteLine("");
+                    Console.WriteLine("Escriba la información del contacto a modificar: ");
+                    Console.WriteLine("(El CODIGO debe ser el de un conctacto existente)");
+                    Console.Write("Nombre: ");
+                    string nombreMod = Console.ReadLine();
+                    Console.Write("Apellido: ");
+                    string apellidoMod = Console.ReadLine();
+                    Console.Write("Código: ");
+                    int codigoMod = Int32.Parse(Console.ReadLine());
+                    Console.Write("Edad: ");
+                    int edadMod = Int32.Parse(Console.ReadLine());
+                    Console.Write("Teléfono: ");
+                    int telefonoMod = Int32.Parse(Console.ReadLine());
+                    Console.Write("Dirección: ");
+                    string direccionMod = Console.ReadLine();
+                    ContactoAgenda newContactMod = new ContactoAgenda(nombreMod, apellidoMod, codigoMod, edadMod, telefonoMod, direccionMod);
+                    instancedCollection.modificarContactoLista(newContactMod);
+                    MenuCollection();
                     break;
-
                 case 5:
-                    //POR IMPLEMENTAR
-                    //ConsutarContactoAgenda(int codigoContacto): ContactoAgenda
-
+                    Console.Write("");
+                    Console.Write("Escriba el CODIGO del contacto a consultar: ");
+                    int codigoConsultar = Int32.Parse(Console.ReadLine());
+                    ContactoAgenda contactoObtenido = instancedCollection.consultarContactoAgenda(codigoConsultar);
+                    Console.WriteLine(contactoObtenido.Codigo + ": " + contactoObtenido.Nombre + " " + contactoObtenido.Apellido + ", " + contactoObtenido.Edad + " años, " + contactoObtenido.Telefono + " " + contactoObtenido.Direccion);
+                    MenuCollection();
                     break;
-
                 case 6:
-                    //POR IMPLEMENTAR
-                    //eliminarContactoAgenda(int CodigoContacto): bool
+                    Console.Write("");
+                    Console.Write("Escriba el CODIGO del contacto a eliminar: ");
+                    int codigoEliminar = Int32.Parse(Console.ReadLine());
+                    instancedCollection.eliminarContactoAgenda(codigoEliminar);
+                    MenuCollection();
                     break;
-
                 case 7:
-                    //IMPRIMIR
-                    imprimirListaContactos();
+                    Console.WriteLine("");
+                    instancedCollection.imprimirListaContactos();
+                    MenuCollection();
                     break;
-
-                case 8:
-                    Console.WriteLine("Saliendo...");
+                default:
+                    Console.WriteLine("");
+                    Console.WriteLine("Usa una opción correcta");
+                    MenuCollection();
                     break;
             }
         }
 
+        public static void MenuArray() {
+            Console.WriteLine("");
+            Console.WriteLine("Seleccione una acción: ");
+            Console.WriteLine("1. Definir tamaño de la Agenda");
+            Console.WriteLine("2. Cargar Agenda de contactos");
+            Console.WriteLine("3. Ingresar contacto");
+            Console.WriteLine("4. Modificar contacto");
+            Console.WriteLine("5. Consultar contacto");
+            Console.WriteLine("6. Eliminar contacto");
+            Console.WriteLine("7. Imprimir lista de Contactos");
+            Console.WriteLine("");
+            Console.Write("Opcion: ");
+            int opcion = Int32.Parse(Console.ReadLine());
 
-
-
-
-        public static void definirTamañoAgenda(int totalContactos)
-        {
-            int tamaño = totalContactos;
-            Console.WriteLine("tamaño asignado a: " + tamaño);
-            Menu();
-        }
-
-        public static void cargarAgendaContactos(int totalContactos, String rutaArchivo)
-        {
-            int counter = 0;
-            string[] separados;
-            string line;
-            char delimitador = ';';
-
-            StreamReader file = File.OpenText(@"contactos.txt");
-
-            string[] titulos = { "Codigo: ", "nombre: ", "apellido: ", "edad: ", "direccion: ", "telefono: " };
-
-            while ((line = file.ReadLine()) != null)
-            {
-
-                separados = line.Split(delimitador);
-                if (counter != 0)
-                {
-                    listadoContactos.Add(new ContactoAgenda() { Codigo = Int32.Parse(separados[0]), 
-                        Nombre = separados[1], 
-                        Apellido = separados[2], 
-                        Edad = Int32.Parse(separados[3]), 
-                        Direccion = separados[4], 
-                        Telefono = Int32.Parse(separados[5]) });
-
-                }
-                counter++;
-
+            switch(opcion) {
+                case 1:
+                    Console.WriteLine("");
+                    Console.WriteLine("¿Cuál será el tamaño de la agenda?: ");
+                    int tamaño = Int32.Parse(Console.ReadLine());
+                    instancedList.definirTamañoAgenda(tamaño);
+                    MenuArray();
+                    break;
+                case 2:
+                    Console.WriteLine("");
+                    Console.WriteLine("Escriba la ruta del archivo TXT: ");
+                    Console.WriteLine("(Por defecto es 'contactos.txt')");
+                    string fileRoute = Console.ReadLine();
+                    instancedList.cargarAgendaContactos(fileRoute);
+                    MenuArray();
+                    break;
+                case 3:
+                    Console.WriteLine("");
+                    Console.WriteLine("Escriba la información del nuevo contacto: ");
+                    Console.Write("Nombre: ");
+                    string nombre = Console.ReadLine();
+                    Console.Write("Apellido: ");
+                    string apellido = Console.ReadLine();
+                    Console.Write("Código: ");
+                    int codigo = Int32.Parse(Console.ReadLine());
+                    Console.Write("Edad: ");
+                    int edad = Int32.Parse(Console.ReadLine());
+                    Console.Write("Teléfono: ");
+                    int telefono = Int32.Parse(Console.ReadLine());
+                    Console.Write("Dirección: ");
+                    string direccion = Console.ReadLine();
+                    ContactoAgenda newContact = new ContactoAgenda(nombre, apellido, codigo, edad, telefono, direccion);
+                    instancedList.ingresarContactoLista(newContact);
+                    MenuArray();
+                    break;
+                case 4:
+                    Console.WriteLine("");
+                    Console.WriteLine("Escriba la información del contacto a modificar: ");
+                    Console.WriteLine("(El CODIGO debe ser el de un conctacto existente)");
+                    Console.Write("Nombre: ");
+                    string nombreMod = Console.ReadLine();
+                    Console.Write("Apellido: ");
+                    string apellidoMod = Console.ReadLine();
+                    Console.Write("Código: ");
+                    int codigoMod = Int32.Parse(Console.ReadLine());
+                    Console.Write("Edad: ");
+                    int edadMod = Int32.Parse(Console.ReadLine());
+                    Console.Write("Teléfono: ");
+                    int telefonoMod = Int32.Parse(Console.ReadLine());
+                    Console.Write("Dirección: ");
+                    string direccionMod = Console.ReadLine();
+                    ContactoAgenda newContactMod = new ContactoAgenda(nombreMod, apellidoMod, codigoMod, edadMod, telefonoMod, direccionMod);
+                    instancedList.modificarContactoLista(newContactMod);
+                    MenuArray();
+                    break;
+                case 5:
+                    Console.Write("");
+                    Console.Write("Escriba el CODIGO del contacto a consultar: ");
+                    int codigoConsultar = Int32.Parse(Console.ReadLine());
+                    ContactoAgenda contactoObtenido = instancedList.consultarContactoAgenda(codigoConsultar);
+                    Console.WriteLine(contactoObtenido.Codigo + ": " + contactoObtenido.Nombre + " " + contactoObtenido.Apellido + ", " + contactoObtenido.Edad + " años, " + contactoObtenido.Telefono + " " + contactoObtenido.Direccion);
+                    MenuArray();
+                    break;
+                case 6:
+                    Console.Write("");
+                    Console.Write("Escriba el CODIGO del contacto a eliminar: ");
+                    int codigoEliminar = Int32.Parse(Console.ReadLine());
+                    instancedList.eliminarContactoAgenda(codigoEliminar);
+                    MenuArray();
+                    break;
+                case 7:
+                    Console.WriteLine("");
+                    instancedList.imprimirListaContactos();
+                    MenuArray();
+                    break;
+                default:
+                    Console.WriteLine("");
+                    Console.WriteLine("Usa una opción correcta");
+                    MenuArray();
+                    break;
             }
-            file.Close();
-            Console.WriteLine("Agenda cargada");
-            Menu();
-            System.Console.ReadLine();
         }
-
-        public static bool ingresarContactoLista(ContactoAgenda registroNuevo) 
-        {
-            listadoContactos.Add(registroNuevo);
-
-            try
-            {
-                //Pass the filepath and filename to the StreamWriter Constructor
-                StreamWriter sw = new StreamWriter(@"Test.txt");
-                //Write a line of text
-                sw.WriteLine("Hello World!!");
-                //Write a second line of text
-                sw.WriteLine("From the StreamWriter class");
-                //Close the file
-                sw.Close();
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("Exception: " + e.Message);
-            }
-            finally
-            {
-                Console.WriteLine("Executing finally block.");
-            }
-
-
-            return true;
-        }
-
-
-        public static bool modificarContactoLista()
-        {
-            //POR IMPLEMENTAR
-
-            return true;
-        }
-
-
-
-
-        public static void imprimirListaContactos()
-        {
-            int counter = 0;
-            string line;
-            char delimitador = ';';
-
-            StreamReader file = File.OpenText(@"contactos.txt");
-
-            string[] titulos = {"Codigo: ","nombre: ", "apellido: ", "edad: ", "direccion: ", "telefono: "};
-
-            while ((line = file.ReadLine()) != null)
-            {
-                
-               string[] separados = line.Split(delimitador);
-                if (counter != 0)
-                {
-                    
-                 for (var i = 0; i < 6; i++)
-                    {
-                        //listadoContactos.Add("");
-                      Console.WriteLine(titulos[i] + separados[i]);
-                     }
-                    Console.WriteLine();
-                }
-                counter++;
-            }
-
-            file.Close();
-
-            Menu();
-
-
-            System.Console.ReadLine();
-        }
-
-
-
-
-        public static List<ContactoAgenda> CargarDatosRegistro()
-        {
-
-            Console.WriteLine("Nombre:");
-            string Nombre = Console.ReadLine();
-
-            Console.WriteLine("Apellido:");
-            string Apellido = Console.ReadLine();
-
-            Console.WriteLine("Edad:");
-            int Edad = Int32.Parse(Console.ReadLine());
-
-            Console.WriteLine("Direccion:");
-            string Direccion = Console.ReadLine();
-
-            Console.WriteLine("Telefono:");
-            int Telefono = Int32.Parse(Console.ReadLine());
-
-
-
-
-
-            int counter = 0;
-            string line;
-            char delimitador = ';';
-            int codigo=1;
-
-            StreamReader file = File.OpenText(@"contactos.txt");
-            StreamWriter escribir;
-
-            while ((line = file.ReadLine()) != null)
-            {
-
-                string[] separados = line.Split(delimitador);
-                if (counter != 0)
-                {
-                    int listacodigo = Int32.Parse(separados[0]);                
-                    if (codigo >= listacodigo)
-                    {
-                        codigo = codigo + 1 ;
-                    }
-                }
-                counter++;
-            }
-
-            file.Close();
-
-            nuevo.Add(new ContactoAgenda()
-            {
-                Codigo = codigo,
-                Nombre = Nombre,
-                Apellido = Apellido,
-                Edad = Edad,
-                Direccion = Direccion,
-                Telefono = Telefono
-            });
-
-            imprimirListaContactos();
-            return nuevo;
-
-            Menu();
-        }
-
-
     }
 }

@@ -13,7 +13,7 @@ namespace InterfacesBusiness {
         private int telefono;
         private string direccion;
 
-        public ContactoAgenda(string nombre, string apellido, int codigo, int edad, int telefono, string direccion,) {
+        public ContactoAgenda(string nombre, string apellido, int codigo, int edad, int telefono, string direccion) {
             Nombre = nombre;
             Apellido = apellido;
             Codigo = codigo;
